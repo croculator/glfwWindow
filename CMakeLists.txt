@@ -4,12 +4,26 @@ project(glfwWindow)
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(SOURCES "${SRC_DIR}/main.cpp")
+
+include_directories(${SRC_DIR})
+set(SOURCES 
+  ${SRC_DIR}/main.cpp
+  ${SRC_DIR}/gfx/window.cpp)
+
+
+#set(SOURCES "${SRC_DIR}/gfx/window.cpp")
+
+
+
+
+
+# include_directories(${SRC_DIR}/gfx)
+# include_directories(${SRC_DIR}/util)
+
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}")
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
-
 
 # GLFW
 set(GLFW_BUILD_EXAMPLES OFF CACHE INTERNAL "Build the GLFW example programs")
@@ -29,3 +43,8 @@ target_link_libraries(${PROJECT_NAME} PUBLIC debug glad-debug)
 # GLM
 add_subdirectory("${LIB_DIR}/glm")
 target_link_libraries(${PROJECT_NAME} PUBLIC glm)
+
+
+#include_directories(${SRC_DIR})
+#file(GLOB SOURCES "src/*.cpp")
+#set(SOURCES ${SOURCES})

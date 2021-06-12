@@ -1,4 +1,5 @@
-#include <cstdio>
+#include <stdio.h>
+#include "gfx/gfx.h"
 
 static void glfw_error_callback(int error, const char* description) {
     fprintf(stderr, "error: %s\n", description);

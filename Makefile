@@ -226,6 +226,30 @@ uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f lib/glm/CMakeFiles/uninstall.dir/build.make lib/glm/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
+src/gfx/window.o: src/gfx/window.cpp.o
+.PHONY : src/gfx/window.o
+
+# target to build an object file
+src/gfx/window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glfwWindow.dir/build.make CMakeFiles/glfwWindow.dir/src/gfx/window.cpp.o
+.PHONY : src/gfx/window.cpp.o
+
+src/gfx/window.i: src/gfx/window.cpp.i
+.PHONY : src/gfx/window.i
+
+# target to preprocess a source file
+src/gfx/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glfwWindow.dir/build.make CMakeFiles/glfwWindow.dir/src/gfx/window.cpp.i
+.PHONY : src/gfx/window.cpp.i
+
+src/gfx/window.s: src/gfx/window.cpp.s
+.PHONY : src/gfx/window.s
+
+# target to generate assembly for a file
+src/gfx/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glfwWindow.dir/build.make CMakeFiles/glfwWindow.dir/src/gfx/window.cpp.s
+.PHONY : src/gfx/window.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -267,6 +291,9 @@ help:
 	@echo "... glad-debug"
 	@echo "... glfw"
 	@echo "... glfwWindow"
+	@echo "... src/gfx/window.o"
+	@echo "... src/gfx/window.i"
+	@echo "... src/gfx/window.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
